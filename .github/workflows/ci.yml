@@ -1,0 +1,47 @@
+name: ci
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: "2.x"
+
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      - name: Install dependencies
+        run: |
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+          bundle exec rspec
+
+      - name: Test with rspec
+        run: |
+          bundle exec rspec
+
+      - name: Build
+        run: |
+          gem build passbase.gemspec
+      #
+      # - name: Publish
+      #   env:
+      #     GEM_API_KEY: ${{ secrets.GEM_API_KEY }}
+      #   run: |
+      #     mkdir -p ~/.gem
+      #     echo '---' >> ~/.gem/credentials
+      #     echo ":rubygems_api_key: $GEM_API_KEY" >> ~/.gem/credentials
+      #     gem push ./*.gem
+      #     rm ~/.gem/credentials
