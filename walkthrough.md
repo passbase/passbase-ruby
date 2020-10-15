@@ -1,7 +1,7 @@
 1. Add Passbase's SDK gem to your Gemfile.
 
 ```rb
-gem 'passbase', '~> 0.0.1'
+gem 'passbase', '~> 1.0.0'
 ```
 
 2. Require the necessary modules in your app
@@ -10,7 +10,7 @@ gem 'passbase', '~> 0.0.1'
 require 'passbase'
 
 Passbase.configure do |config|
-    config.api_key['X-API-KEY'] = '{{YOUR_SECRET_API_KEY}}'
+  config.api_key['X-API-KEY'] = '{{YOUR_SECRET_API_KEY}}'
 end
 
 api_instance = Passbase::ProjectApi.new

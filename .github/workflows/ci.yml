@@ -3,6 +3,8 @@ name: ci
 on:
   push:
     branches: [master]
+    tags:
+      - "v1*"
   pull_request:
 
 jobs:
@@ -10,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Ruby
         uses: actions/setup-ruby@v1
         with:
           ruby-version: "2.x"
@@ -35,13 +37,15 @@ jobs:
       - name: Build
         run: |
           gem build passbase.gemspec
-      #
-      # - name: Publish
-      #   env:
-      #     GEM_API_KEY: ${{ secrets.GEM_API_KEY }}
-      #   run: |
-      #     mkdir -p ~/.gem
-      #     echo '---' >> ~/.gem/credentials
-      #     echo ":rubygems_api_key: $GEM_API_KEY" >> ~/.gem/credentials
-      #     gem push ./*.gem
-      #     rm ~/.gem/credentials
+
+      - name: Publish
+        if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
+        env:
+          GEM_API_KEY: ${{ secrets.GEM_API_KEY }}
+        run: |
+          mkdir -p ~/.gem
+          echo '---' >> ~/.gem/credentials
+          echo ":rubygems_api_key: $GEM_API_KEY" >> ~/.gem/credentials
+          chmod 0600 ~/.gem/credentials
+          gem push ./*.gem
+          rm ~/.gem/credentials
