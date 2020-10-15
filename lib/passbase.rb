@@ -28,7 +28,6 @@ require 'passbase/models/project_settings_verification_steps'
 require 'passbase/models/resource'
 require 'passbase/models/resource_file'
 require 'passbase/models/resource_input'
-require 'passbase/models/resource_type'
 require 'passbase/models/user'
 require 'passbase/models/watchlist_response'
 

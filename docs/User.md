@@ -15,7 +15,7 @@ require 'Passbase'
 
 instance = Passbase::User.new(email: jessie@example.com,
                                  identity_access_token: eyJhbGciOiJIUzI1NiIsI...,
-                                 required_steps: [{&quot;type&quot;:&quot;email&quot;,&quot;document_types&quot;:[&quot;EMAIL&quot;]},{&quot;type&quot;:&quot;liveness_check&quot;,&quot;document_types&quot;:[&quot;FACE_VIDEO&quot;]},{&quot;type&quot;:&quot;country&quot;,&quot;document_types&quot;:[&quot;COUNTRY&quot;]},{&quot;type&quot;:&quot;identity_document_check&quot;,&quot;document_types&quot;:[&quot;PASSPORT&quot;,&quot;DRIVERS_LICENSE&quot;]},{&quot;type&quot;:&quot;insurance_card_scan&quot;,&quot;document_types&quot;:[&quot;HEALTH_INSURANCE_CARD&quot;]}])
+                                 required_steps: [{&quot;step&quot;:&quot;email&quot;,&quot;resource_types&quot;:[&quot;EMAIL&quot;]},{&quot;step&quot;:&quot;liveness_check&quot;,&quot;resource_types&quot;:[&quot;FACE_VIDEO&quot;]},{&quot;step&quot;:&quot;country&quot;,&quot;resource_types&quot;:[&quot;de&quot;,&quot;us&quot;,&quot;vn&quot;,&quot;zn&quot;]},{&quot;step&quot;:&quot;identity_document_check&quot;,&quot;resource_types&quot;:[&quot;PASSPORT&quot;,&quot;DRIVERS_LICENSE&quot;]},{&quot;step&quot;:&quot;insurance_card_scan&quot;,&quot;resource_types&quot;:[&quot;HEALTH_INSURANCE_CARD&quot;]}])
 ```
 
 

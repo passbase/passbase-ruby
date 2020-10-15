@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **step** | **String** |  | [optional] 
-**resource_types** | [**Array&lt;ResourceType&gt;**](ResourceType.md) |  | [optional] 
+**resource_types** | **Array&lt;String&gt;** |  | [optional] 
 
 ## Code Sample
 

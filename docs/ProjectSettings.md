@@ -21,7 +21,7 @@ instance = Passbase::ProjectSettings.new(id: 00000000-0000-0000-0000-00000000000
                                  environment: sandbox,
                                  organization: Passbase Inc.,
                                  customizations: null,
-                                 verification_steps: [{&quot;type&quot;:&quot;email&quot;,&quot;document_types&quot;:[&quot;EMAIL&quot;]},{&quot;type&quot;:&quot;liveness_check&quot;,&quot;document_types&quot;:[&quot;FACE_VIDEO&quot;]},{&quot;type&quot;:&quot;country&quot;,&quot;document_types&quot;:[&quot;COUNTRY&quot;]},{&quot;type&quot;:&quot;identity_document_check&quot;,&quot;document_types&quot;:[&quot;PASSPORT&quot;,&quot;DRIVERS_LICENSE&quot;]},{&quot;type&quot;:&quot;insurance_card_scan&quot;,&quot;document_types&quot;:[&quot;HEALTH_INSURANCE_CARD&quot;]}])
+                                 verification_steps: [{&quot;step&quot;:&quot;email&quot;,&quot;resource_types&quot;:[&quot;EMAIL&quot;]},{&quot;step&quot;:&quot;liveness_check&quot;,&quot;resource_types&quot;:[&quot;FACE_VIDEO&quot;]},{&quot;step&quot;:&quot;country&quot;,&quot;resource_types&quot;:[&quot;de&quot;,&quot;us&quot;,&quot;gb&quot;,&quot;ca&quot;]},{&quot;step&quot;:&quot;identity_document_check&quot;,&quot;resource_types&quot;:[&quot;PASSPORT&quot;,&quot;DRIVERS_LICENSE&quot;]},{&quot;step&quot;:&quot;insurance_card_scan&quot;,&quot;resource_types&quot;:[&quot;HEALTH_INSURANCE_CARD&quot;]}])
 ```
 
 

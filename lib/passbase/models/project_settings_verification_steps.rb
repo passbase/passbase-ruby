@@ -30,7 +30,7 @@ module Passbase
     def self.openapi_types
       {
         :'step' => :'String',
-        :'resource_types' => :'Array<ResourceType>'
+        :'resource_types' => :'Array<String>'
       }
     end
 

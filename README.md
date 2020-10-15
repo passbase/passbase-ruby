@@ -106,7 +106,6 @@ Class | Method | HTTP request | Description
  - [Passbase::Resource](docs/Resource.md)
  - [Passbase::ResourceFile](docs/ResourceFile.md)
  - [Passbase::ResourceInput](docs/ResourceInput.md)
- - [Passbase::ResourceType](docs/ResourceType.md)
  - [Passbase::User](docs/User.md)
  - [Passbase::WatchlistResponse](docs/WatchlistResponse.md)
 

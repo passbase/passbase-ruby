@@ -16,7 +16,6 @@ docs/ProjectSettingsVerificationSteps.md
 docs/Resource.md
 docs/ResourceFile.md
 docs/ResourceInput.md
-docs/ResourceType.md
 docs/User.md
 docs/WatchlistResponse.md
 lib/passbase.rb
@@ -37,7 +36,6 @@ lib/passbase/models/project_settings_verification_steps.rb
 lib/passbase/models/resource.rb
 lib/passbase/models/resource_file.rb
 lib/passbase/models/resource_input.rb
-lib/passbase/models/resource_type.rb
 lib/passbase/models/user.rb
 lib/passbase/models/watchlist_response.rb
 lib/passbase/version.rb
@@ -57,7 +55,6 @@ spec/models/project_settings_verification_steps_spec.rb
 spec/models/resource_file_spec.rb
 spec/models/resource_input_spec.rb
 spec/models/resource_spec.rb
-spec/models/resource_type_spec.rb
 spec/models/user_spec.rb
 spec/models/watchlist_response_spec.rb
 spec/spec_helper.rb

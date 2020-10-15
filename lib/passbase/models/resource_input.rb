@@ -14,6 +14,7 @@ require 'date'
 
 module Passbase
   class ResourceInput
+    # All resource types that passbase supports
     attr_accessor :type
 
     # 2-letter code of the country
@@ -39,7 +40,7 @@ module Passbase
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'type' => :'ResourceType',
+        :'type' => :'String',
         :'country' => :'String',
         :'resource_files' => :'Array<Array>',
         :'resource_data' => :'Object',

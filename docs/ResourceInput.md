@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**ResourceType**](ResourceType.md) |  | [optional] 
+**type** | **String** | All resource types that passbase supports | [optional] 
 **country** | **String** | 2-letter code of the country | [optional] 
 **resource_files** | **Array&lt;Array&gt;** |  | [optional] 
 **resource_data** | **Object** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'Passbase'
 
-instance = Passbase::ResourceInput.new(type: null,
+instance = Passbase::ResourceInput.new(type: NATIONAL_ID_CARD,
                                  country: DE,
                                  resource_files: null,
                                  resource_data: null,

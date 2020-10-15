@@ -17,6 +17,7 @@ module Passbase
     # Dynamic key/value hashmap of the data extracted from the resource. 
     attr_accessor :datapoints
 
+    # All resource types that passbase supports
     attr_accessor :type
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -31,7 +32,7 @@ module Passbase
     def self.openapi_types
       {
         :'datapoints' => :'Object',
-        :'type' => :'ResourceType'
+        :'type' => :'String'
       }
     end
 

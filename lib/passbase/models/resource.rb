@@ -26,6 +26,7 @@ module Passbase
     # Unix-timestamp of when the resource was updated
     attr_accessor :updated
 
+    # All resource types that passbase supports
     attr_accessor :type
 
     attr_accessor :resource_files
@@ -71,7 +72,7 @@ module Passbase
         :'status' => :'String',
         :'created' => :'Integer',
         :'updated' => :'Integer',
-        :'type' => :'ResourceType',
+        :'type' => :'String',
         :'resource_files' => :'Array<Object>'
       }
     end
