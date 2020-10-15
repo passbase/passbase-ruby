@@ -24,28 +24,6 @@ module Passbase
     # Font used in the verification flow
     attr_accessor :font_family
 
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -108,19 +86,7 @@ module Passbase
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      font_family_validator = EnumAttributeValidator.new('String', ["Arial", "Exo", "Open Sans", "Lato", "Baskerville"])
-      return false unless font_family_validator.valid?(@font_family)
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] font_family Object to be assigned
-    def font_family=(font_family)
-      validator = EnumAttributeValidator.new('String', ["Arial", "Exo", "Open Sans", "Lato", "Baskerville"])
-      unless validator.valid?(font_family)
-        fail ArgumentError, "invalid value for \"font_family\", must be one of #{validator.allowable_values}."
-      end
-      @font_family = font_family
     end
 
     # Checks equality by comparing each attribute.
