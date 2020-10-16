@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    passbase (1.0.0)
+    passbase (1.0.2)
       faraday (>= 0.14.0)
 
 GEM
