@@ -19,6 +19,7 @@ require 'passbase/configuration'
 # Models
 require 'passbase/models/cursor'
 require 'passbase/models/identity'
+require 'passbase/models/identity_owner'
 require 'passbase/models/identity_resource'
 require 'passbase/models/paginated_identities'
 require 'passbase/models/paginated_resources'

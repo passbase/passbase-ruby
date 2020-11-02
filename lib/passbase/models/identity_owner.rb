@@ -13,76 +13,31 @@ OpenAPI Generator version: 5.0.0-SNAPSHOT
 require 'date'
 
 module Passbase
-  class Identity
-    # Unique ID of the identity
-    attr_accessor :id
+  class IdentityOwner
+    # Email of the user the identity belongs to
+    attr_accessor :email
 
-    # Current state of the identity in Passbase's systems
-    attr_accessor :status
+    # First name of the user the identity belongs to
+    attr_accessor :first_name
 
-    attr_accessor :owner
-
-    # Float between 0 and 1 representing our confidence that this identity is valid. 0 meaning we couldn't verify any of the information provided with accuracy, and 1 absolute confidence.
-    attr_accessor :score
-
-    # Unix-timestamp of when the identity was created
-    attr_accessor :created
-
-    # Unix-timestamp of when the identity was updated
-    attr_accessor :updated
-
-    # resources attached to a verification
-    attr_accessor :resources
-
-    attr_accessor :watchlist
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
+    # Last name of the user the identity belongs to
+    attr_accessor :last_name
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
-        :'status' => :'status',
-        :'owner' => :'owner',
-        :'score' => :'score',
-        :'created' => :'created',
-        :'updated' => :'updated',
-        :'resources' => :'resources',
-        :'watchlist' => :'watchlist'
+        :'email' => :'email',
+        :'first_name' => :'first_name',
+        :'last_name' => :'last_name'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
-        :'status' => :'String',
-        :'owner' => :'IdentityOwner',
-        :'score' => :'Float',
-        :'created' => :'Integer',
-        :'updated' => :'Integer',
-        :'resources' => :'Array<IdentityResource>',
-        :'watchlist' => :'WatchlistResponse'
+        :'email' => :'String',
+        :'first_name' => :'String',
+        :'last_name' => :'String'
       }
     end
 
@@ -96,49 +51,27 @@ module Passbase
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Passbase::Identity` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Passbase::IdentityOwner` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Passbase::Identity`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Passbase::IdentityOwner`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
+      if attributes.key?(:'email')
+        self.email = attributes[:'email']
       end
 
-      if attributes.key?(:'status')
-        self.status = attributes[:'status']
+      if attributes.key?(:'first_name')
+        self.first_name = attributes[:'first_name']
       end
 
-      if attributes.key?(:'owner')
-        self.owner = attributes[:'owner']
-      end
-
-      if attributes.key?(:'score')
-        self.score = attributes[:'score']
-      end
-
-      if attributes.key?(:'created')
-        self.created = attributes[:'created']
-      end
-
-      if attributes.key?(:'updated')
-        self.updated = attributes[:'updated']
-      end
-
-      if attributes.key?(:'resources')
-        if (value = attributes[:'resources']).is_a?(Array)
-          self.resources = value
-        end
-      end
-
-      if attributes.key?(:'watchlist')
-        self.watchlist = attributes[:'watchlist']
+      if attributes.key?(:'last_name')
+        self.last_name = attributes[:'last_name']
       end
     end
 
@@ -152,19 +85,7 @@ module Passbase
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      status_validator = EnumAttributeValidator.new('String', ["created", "processing", "pending", "approved", "declined"])
-      return false unless status_validator.valid?(@status)
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] status Object to be assigned
-    def status=(status)
-      validator = EnumAttributeValidator.new('String', ["created", "processing", "pending", "approved", "declined"])
-      unless validator.valid?(status)
-        fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
-      end
-      @status = status
     end
 
     # Checks equality by comparing each attribute.
@@ -172,14 +93,9 @@ module Passbase
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
-          status == o.status &&
-          owner == o.owner &&
-          score == o.score &&
-          created == o.created &&
-          updated == o.updated &&
-          resources == o.resources &&
-          watchlist == o.watchlist
+          email == o.email &&
+          first_name == o.first_name &&
+          last_name == o.last_name
     end
 
     # @see the `==` method
@@ -191,7 +107,7 @@ module Passbase
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, status, owner, score, created, updated, resources, watchlist].hash
+      [email, first_name, last_name].hash
     end
 
     # Builds the object from hash

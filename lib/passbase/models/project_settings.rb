@@ -17,7 +17,7 @@ module Passbase
     # Unique ID of the project
     attr_accessor :id
 
-    # slugs are meant to be a way to verify people just with the link
+    # Slugs are meant to be a way to verify people just with the link
     attr_accessor :slug
 
     attr_accessor :environment

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | Unique ID of the project | [optional] 
-**slug** | **String** | slugs are meant to be a way to verify people just with the link | [optional] 
+**slug** | **String** | Slugs are meant to be a way to verify people just with the link | [optional] 
 **environment** | **String** |  | [optional] 
 **organization** | **String** | Name of the organization that owns this project | [optional] 
 **customizations** | [**ProjectSettingsCustomizations**](ProjectSettingsCustomizations.md) |  | [optional] 

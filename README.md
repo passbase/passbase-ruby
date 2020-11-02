@@ -96,6 +96,7 @@ Class | Method | HTTP request | Description
 
  - [Passbase::Cursor](docs/Cursor.md)
  - [Passbase::Identity](docs/Identity.md)
+ - [Passbase::IdentityOwner](docs/IdentityOwner.md)
  - [Passbase::IdentityResource](docs/IdentityResource.md)
  - [Passbase::PaginatedIdentities](docs/PaginatedIdentities.md)
  - [Passbase::PaginatedResources](docs/PaginatedResources.md)

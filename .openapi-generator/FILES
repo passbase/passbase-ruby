@@ -6,6 +6,7 @@ README.md
 docs/Cursor.md
 docs/Identity.md
 docs/IdentityApi.md
+docs/IdentityOwner.md
 docs/IdentityResource.md
 docs/PaginatedIdentities.md
 docs/PaginatedResources.md
@@ -27,6 +28,7 @@ lib/passbase/configuration.rb
 lib/passbase/configuration.rb
 lib/passbase/models/cursor.rb
 lib/passbase/models/identity.rb
+lib/passbase/models/identity_owner.rb
 lib/passbase/models/identity_resource.rb
 lib/passbase/models/paginated_identities.rb
 lib/passbase/models/paginated_resources.rb
@@ -45,6 +47,7 @@ spec/api/project_api_spec.rb
 spec/api_client_spec.rb
 spec/configuration_spec.rb
 spec/models/cursor_spec.rb
+spec/models/identity_owner_spec.rb
 spec/models/identity_resource_spec.rb
 spec/models/identity_spec.rb
 spec/models/paginated_identities_spec.rb
