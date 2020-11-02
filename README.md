@@ -67,15 +67,14 @@ Passbase.configure do |config|
 end
 
 api_instance = Passbase::IdentityApi.new
-id = 'id_example' # String | Identity id
-resource_id = 'resource_id_example' # String | Resource id
+id = 'id_example' # String | Unique ID of the identity to return
 
 begin
-  #Get resource
-  result = api_instance.get_identity_resource_by_id(id, resource_id)
+  #Get identity
+  result = api_instance.get_identity_by_id(id)
   p result
 rescue Passbase::ApiError => e
-  puts "Exception when calling IdentityApi->get_identity_resource_by_id: #{e}"
+  puts "Exception when calling IdentityApi->get_identity_by_id: #{e}"
 end
 
 ```
@@ -86,10 +85,10 @@ All URIs are relative to *https://api.passbase.com/verification/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*Passbase::IdentityApi* | [**get_identity_resource_by_id**](docs/IdentityApi.md#get_identity_resource_by_id) | **GET** /identities/{id}/resource/{resource_id} | Get resource
-*Passbase::IdentityApi* | [**get_identy_by_id**](docs/IdentityApi.md#get_identy_by_id) | **GET** /identities/{id} | Get identity
+*Passbase::IdentityApi* | [**get_identity_by_id**](docs/IdentityApi.md#get_identity_by_id) | **GET** /identities/{id} | Get identity
+*Passbase::IdentityApi* | [**get_identity_resource_by_id**](docs/IdentityApi.md#get_identity_resource_by_id) | **GET** /identity/{id}/resources/{resource_id} | Get resource
 *Passbase::IdentityApi* | [**list_identities**](docs/IdentityApi.md#list_identities) | **GET** /identities | List identities
-*Passbase::IdentityApi* | [**list_identity_resources**](docs/IdentityApi.md#list_identity_resources) | **GET** /identities/{id}/resources | List resources
+*Passbase::IdentityApi* | [**list_identity_resources**](docs/IdentityApi.md#list_identity_resources) | **GET** /identity/{id}/resources | List resources
 *Passbase::ProjectApi* | [**get_settings**](docs/ProjectApi.md#get_settings) | **GET** /settings | Get project settings
 
 

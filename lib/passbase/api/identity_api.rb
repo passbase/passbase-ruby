@@ -19,6 +19,68 @@ module Passbase
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
+    # Get identity
+    # Retrieve an identity by providing the identity ID.
+    # @param id [String] Unique ID of the identity to return
+    # @param [Hash] opts the optional parameters
+    # @return [Identity]
+    def get_identity_by_id(id, opts = {})
+      data, _status_code, _headers = get_identity_by_id_with_http_info(id, opts)
+      data
+    end
+
+    # Get identity
+    # Retrieve an identity by providing the identity ID.
+    # @param id [String] Unique ID of the identity to return
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Identity, Integer, Hash)>] Identity data, response status code and response headers
+    def get_identity_by_id_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: IdentityApi.get_identity_by_id ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling IdentityApi.get_identity_by_id"
+      end
+      # resource path
+      local_var_path = '/identities/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'Identity' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['SecretApiKey']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: IdentityApi#get_identity_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get resource
     # Get a resource attached to an identity by providing the resource ID. 
     # @param id [String] Identity id
@@ -49,7 +111,7 @@ module Passbase
         fail ArgumentError, "Missing the required parameter 'resource_id' when calling IdentityApi.get_identity_resource_by_id"
       end
       # resource path
-      local_var_path = '/identities/{id}/resource/{resource_id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s)).sub('{' + 'resource_id' + '}', CGI.escape(resource_id.to_s))
+      local_var_path = '/identity/{id}/resources/{resource_id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s)).sub('{' + 'resource_id' + '}', CGI.escape(resource_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -83,68 +145,6 @@ module Passbase
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: IdentityApi#get_identity_resource_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get identity
-    # Retrieve an identity by providing the identity ID.
-    # @param id [String] Unique ID of the identity to return
-    # @param [Hash] opts the optional parameters
-    # @return [Array<Identity>]
-    def get_identy_by_id(id, opts = {})
-      data, _status_code, _headers = get_identy_by_id_with_http_info(id, opts)
-      data
-    end
-
-    # Get identity
-    # Retrieve an identity by providing the identity ID.
-    # @param id [String] Unique ID of the identity to return
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<Identity>, Integer, Hash)>] Array<Identity> data, response status code and response headers
-    def get_identy_by_id_with_http_info(id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: IdentityApi.get_identy_by_id ...'
-      end
-      # verify the required parameter 'id' is set
-      if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling IdentityApi.get_identy_by_id"
-      end
-      # resource path
-      local_var_path = '/identities/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:body] 
-
-      # return_type
-      return_type = opts[:return_type] || 'Array<Identity>' 
-
-      # auth_names
-      auth_names = opts[:auth_names] || ['SecretApiKey']
-
-      new_options = opts.merge(
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: IdentityApi#get_identy_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -239,7 +239,7 @@ module Passbase
         fail ArgumentError, "Missing the required parameter 'id' when calling IdentityApi.list_identity_resources"
       end
       # resource path
-      local_var_path = '/identities/{id}/resources'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+      local_var_path = '/identity/{id}/resources'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}

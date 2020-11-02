@@ -4,11 +4,65 @@ All URIs are relative to *https://api.passbase.com/verification/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_identity_resource_by_id**](IdentityApi.md#get_identity_resource_by_id) | **GET** /identities/{id}/resource/{resource_id} | Get resource
-[**get_identy_by_id**](IdentityApi.md#get_identy_by_id) | **GET** /identities/{id} | Get identity
+[**get_identity_by_id**](IdentityApi.md#get_identity_by_id) | **GET** /identities/{id} | Get identity
+[**get_identity_resource_by_id**](IdentityApi.md#get_identity_resource_by_id) | **GET** /identity/{id}/resources/{resource_id} | Get resource
 [**list_identities**](IdentityApi.md#list_identities) | **GET** /identities | List identities
-[**list_identity_resources**](IdentityApi.md#list_identity_resources) | **GET** /identities/{id}/resources | List resources
+[**list_identity_resources**](IdentityApi.md#list_identity_resources) | **GET** /identity/{id}/resources | List resources
 
+
+
+## get_identity_by_id
+
+> Identity get_identity_by_id(id)
+
+Get identity
+
+Retrieve an identity by providing the identity ID.
+
+### Example
+
+```ruby
+# load the gem
+require 'passbase'
+# setup authorization
+Passbase.configure do |config|
+  # Configure API key authorization: SecretApiKey
+  config.api_key['X-API-KEY'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-API-KEY'] = 'Bearer'
+end
+
+api_instance = Passbase::IdentityApi.new
+id = 'id_example' # String | Unique ID of the identity to return
+
+begin
+  #Get identity
+  result = api_instance.get_identity_by_id(id)
+  p result
+rescue Passbase::ApiError => e
+  puts "Exception when calling IdentityApi->get_identity_by_id: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**String**](.md)| Unique ID of the identity to return | 
+
+### Return type
+
+[**Identity**](Identity.md)
+
+### Authorization
+
+[SecretApiKey](../README.md#SecretApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## get_identity_resource_by_id
@@ -56,60 +110,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Resource**](Resource.md)
-
-### Authorization
-
-[SecretApiKey](../README.md#SecretApiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## get_identy_by_id
-
-> Array&lt;Identity&gt; get_identy_by_id(id)
-
-Get identity
-
-Retrieve an identity by providing the identity ID.
-
-### Example
-
-```ruby
-# load the gem
-require 'passbase'
-# setup authorization
-Passbase.configure do |config|
-  # Configure API key authorization: SecretApiKey
-  config.api_key['X-API-KEY'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['X-API-KEY'] = 'Bearer'
-end
-
-api_instance = Passbase::IdentityApi.new
-id = 'id_example' # String | Unique ID of the identity to return
-
-begin
-  #Get identity
-  result = api_instance.get_identy_by_id(id)
-  p result
-rescue Passbase::ApiError => e
-  puts "Exception when calling IdentityApi->get_identy_by_id: #{e}"
-end
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**String**](.md)| Unique ID of the identity to return | 
-
-### Return type
-
-[**Array&lt;Identity&gt;**](Identity.md)
 
 ### Authorization
 

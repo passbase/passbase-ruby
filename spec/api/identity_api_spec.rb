@@ -32,6 +32,18 @@ describe 'IdentityApi' do
     end
   end
 
+  # unit tests for get_identity_by_id
+  # Get identity
+  # Retrieve an identity by providing the identity ID.
+  # @param id Unique ID of the identity to return
+  # @param [Hash] opts the optional parameters
+  # @return [Identity]
+  describe 'get_identity_by_id test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_identity_resource_by_id
   # Get resource
   # Get a resource attached to an identity by providing the resource ID. 
@@ -40,18 +52,6 @@ describe 'IdentityApi' do
   # @param [Hash] opts the optional parameters
   # @return [Resource]
   describe 'get_identity_resource_by_id test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for get_identy_by_id
-  # Get identity
-  # Retrieve an identity by providing the identity ID.
-  # @param id Unique ID of the identity to return
-  # @param [Hash] opts the optional parameters
-  # @return [Array<Identity>]
-  describe 'get_identy_by_id test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
