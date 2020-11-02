@@ -30,7 +30,7 @@ module Passbase
     # @option config [Configuration] Configuration for initializing the object, default to Configuration.default
     def initialize(config = Configuration.default)
       @config = config
-      @user_agent = "passbase/ruby@1.0.3"
+      @user_agent = "passbase/ruby@1.1.0"
       @default_headers = {
         'Content-Type' => 'application/json',
         'User-Agent' => @user_agent

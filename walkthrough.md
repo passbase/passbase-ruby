@@ -1,7 +1,7 @@
 1. Add Passbase's SDK gem to your Gemfile.
 
 ```rb
-gem 'passbase', '~> 1.0.2'
+gem 'passbase', '~> 1.1.0'
 ```
 
 2. Require the necessary modules in your app
