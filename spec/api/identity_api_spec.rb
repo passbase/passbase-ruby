@@ -57,6 +57,20 @@ describe 'IdentityApi' do
     end
   end
 
+  # unit tests for get_identity_resource_file_by_id
+  # Get resource file
+  # Get a raw resource file attached to an identity by providing the resource ID and the resource file ID. This is a protected route and you&#39;ll need a specific government authorization to access it. 
+  # @param id Identity id
+  # @param resource_id Resource id
+  # @param resource_file_id Resource file id
+  # @param [Hash] opts the optional parameters
+  # @return [ResourceFile]
+  describe 'get_identity_resource_file_by_id test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for list_identities
   # List identities
   # List all the identities retrievable by the provided API Secret Key.

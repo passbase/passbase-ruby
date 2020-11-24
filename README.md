@@ -87,6 +87,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *Passbase::IdentityApi* | [**get_identity_by_id**](docs/IdentityApi.md#get_identity_by_id) | **GET** /identities/{id} | Get identity
 *Passbase::IdentityApi* | [**get_identity_resource_by_id**](docs/IdentityApi.md#get_identity_resource_by_id) | **GET** /identity/{id}/resources/{resource_id} | Get resource
+*Passbase::IdentityApi* | [**get_identity_resource_file_by_id**](docs/IdentityApi.md#get_identity_resource_file_by_id) | **GET** /identity/{id}/resources/{resource_id}/resource_files/{resource_file_id} | Get resource file
 *Passbase::IdentityApi* | [**list_identities**](docs/IdentityApi.md#list_identities) | **GET** /identities | List identities
 *Passbase::IdentityApi* | [**list_identity_resources**](docs/IdentityApi.md#list_identity_resources) | **GET** /identity/{id}/resources | List resources
 *Passbase::ProjectApi* | [**get_settings**](docs/ProjectApi.md#get_settings) | **GET** /settings | Get project settings

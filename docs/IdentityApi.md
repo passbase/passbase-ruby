@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_identity_by_id**](IdentityApi.md#get_identity_by_id) | **GET** /identities/{id} | Get identity
 [**get_identity_resource_by_id**](IdentityApi.md#get_identity_resource_by_id) | **GET** /identity/{id}/resources/{resource_id} | Get resource
+[**get_identity_resource_file_by_id**](IdentityApi.md#get_identity_resource_file_by_id) | **GET** /identity/{id}/resources/{resource_id}/resource_files/{resource_file_id} | Get resource file
 [**list_identities**](IdentityApi.md#list_identities) | **GET** /identities | List identities
 [**list_identity_resources**](IdentityApi.md#list_identity_resources) | **GET** /identity/{id}/resources | List resources
 
@@ -110,6 +111,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Resource**](Resource.md)
+
+### Authorization
+
+[SecretApiKey](../README.md#SecretApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_identity_resource_file_by_id
+
+> ResourceFile get_identity_resource_file_by_id(id, resource_id, resource_file_id)
+
+Get resource file
+
+Get a raw resource file attached to an identity by providing the resource ID and the resource file ID. This is a protected route and you'll need a specific government authorization to access it. 
+
+### Example
+
+```ruby
+# load the gem
+require 'passbase'
+# setup authorization
+Passbase.configure do |config|
+  # Configure API key authorization: SecretApiKey
+  config.api_key['X-API-KEY'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-API-KEY'] = 'Bearer'
+end
+
+api_instance = Passbase::IdentityApi.new
+id = 'id_example' # String | Identity id
+resource_id = 'resource_id_example' # String | Resource id
+resource_file_id = 'resource_file_id_example' # String | Resource file id
+
+begin
+  #Get resource file
+  result = api_instance.get_identity_resource_file_by_id(id, resource_id, resource_file_id)
+  p result
+rescue Passbase::ApiError => e
+  puts "Exception when calling IdentityApi->get_identity_resource_file_by_id: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| Identity id | 
+ **resource_id** | **String**| Resource id | 
+ **resource_file_id** | **String**| Resource file id | 
+
+### Return type
+
+[**ResourceFile**](ResourceFile.md)
 
 ### Authorization
 

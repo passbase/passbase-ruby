@@ -149,6 +149,80 @@ module Passbase
       return data, status_code, headers
     end
 
+    # Get resource file
+    # Get a raw resource file attached to an identity by providing the resource ID and the resource file ID. This is a protected route and you'll need a specific government authorization to access it. 
+    # @param id [String] Identity id
+    # @param resource_id [String] Resource id
+    # @param resource_file_id [String] Resource file id
+    # @param [Hash] opts the optional parameters
+    # @return [ResourceFile]
+    def get_identity_resource_file_by_id(id, resource_id, resource_file_id, opts = {})
+      data, _status_code, _headers = get_identity_resource_file_by_id_with_http_info(id, resource_id, resource_file_id, opts)
+      data
+    end
+
+    # Get resource file
+    # Get a raw resource file attached to an identity by providing the resource ID and the resource file ID. This is a protected route and you&#39;ll need a specific government authorization to access it. 
+    # @param id [String] Identity id
+    # @param resource_id [String] Resource id
+    # @param resource_file_id [String] Resource file id
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ResourceFile, Integer, Hash)>] ResourceFile data, response status code and response headers
+    def get_identity_resource_file_by_id_with_http_info(id, resource_id, resource_file_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: IdentityApi.get_identity_resource_file_by_id ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling IdentityApi.get_identity_resource_file_by_id"
+      end
+      # verify the required parameter 'resource_id' is set
+      if @api_client.config.client_side_validation && resource_id.nil?
+        fail ArgumentError, "Missing the required parameter 'resource_id' when calling IdentityApi.get_identity_resource_file_by_id"
+      end
+      # verify the required parameter 'resource_file_id' is set
+      if @api_client.config.client_side_validation && resource_file_id.nil?
+        fail ArgumentError, "Missing the required parameter 'resource_file_id' when calling IdentityApi.get_identity_resource_file_by_id"
+      end
+      # resource path
+      local_var_path = '/identity/{id}/resources/{resource_id}/resource_files/{resource_file_id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s)).sub('{' + 'resource_id' + '}', CGI.escape(resource_id.to_s)).sub('{' + 'resource_file_id' + '}', CGI.escape(resource_file_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'ResourceFile' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['SecretApiKey']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: IdentityApi#get_identity_resource_file_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # List identities
     # List all the identities retrievable by the provided API Secret Key.
     # @param [Hash] opts the optional parameters
