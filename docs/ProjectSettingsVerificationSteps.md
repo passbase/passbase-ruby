@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**step** | **String** |  | [optional] 
-**resource_types** | **Array&lt;String&gt;** |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **step** | **String** |  | [optional] |
+| **resource_types** | **Array&lt;String&gt;** |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'Passbase'
+require 'passbase'
 
-instance = Passbase::ProjectSettingsVerificationSteps.new(step: liveness_check,
-                                 resource_types: [&quot;DRIVERS_LICENSE&quot;,&quot;NATIONAL_ID_CARD&quot;])
+instance = Passbase::ProjectSettingsVerificationSteps.new(
+  step: liveness_check,
+  resource_types: [&quot;DRIVERS_LICENSE&quot;,&quot;NATIONAL_ID_CARD&quot;]
+)
 ```
-
 

@@ -61,13 +61,13 @@ require 'passbase'
 # Setup authorization
 Passbase.configure do |config|
   # Configure API key authorization: SecretApiKey
-  config.api_key['X-API-KEY'] = 'YOUR API KEY'
+  config.api_key['SecretApiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['X-API-KEY'] = 'Bearer'
+  # config.api_key_prefix['SecretApiKey'] = 'Bearer'
 end
 
 api_instance = Passbase::IdentityApi.new
-id = 'id_example' # String | Unique ID of the identity to return
+id = TODO # String | Unique ID of the identity to return
 
 begin
   #Get identity
@@ -81,7 +81,7 @@ end
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.passbase.com/verification/v1*
+All URIs are relative to *https://api.passbase.com/verification/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

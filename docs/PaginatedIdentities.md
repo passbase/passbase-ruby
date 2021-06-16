@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**cursor** | [**Cursor**](Cursor.md) |  | [optional] 
-**data** | [**Array&lt;Identity&gt;**](Identity.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **cursor** | [**Cursor**](Cursor.md) |  | [optional] |
+| **data** | [**Array&lt;Identity&gt;**](Identity.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'Passbase'
+require 'passbase'
 
-instance = Passbase::PaginatedIdentities.new(cursor: null,
-                                 data: null)
+instance = Passbase::PaginatedIdentities.new(
+  cursor: null,
+  data: null
+)
 ```
-
 

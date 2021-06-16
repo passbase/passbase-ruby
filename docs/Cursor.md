@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**_next** | **String** | opaque token to pass back to the API to get the next batch of data | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **_next** | **String** | opaque token to pass back to the API to get the next batch of data | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'Passbase'
+require 'passbase'
 
-instance = Passbase::Cursor.new(_next: aWQ6NDA3MQ&#x3D;&#x3D;)
+instance = Passbase::Cursor.new(
+  _next: aWQ6NDA3MQ&#x3D;&#x3D;
+)
 ```
-
 

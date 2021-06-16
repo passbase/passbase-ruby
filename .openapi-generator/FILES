@@ -25,7 +25,6 @@ lib/passbase/api/project_api.rb
 lib/passbase/api_client.rb
 lib/passbase/api_error.rb
 lib/passbase/configuration.rb
-lib/passbase/configuration.rb
 lib/passbase/models/cursor.rb
 lib/passbase/models/identity.rb
 lib/passbase/models/identity_owner.rb
