@@ -9,8 +9,12 @@ gem 'passbase', '~> 1.3.0'
 ```rb
 require 'passbase'
 
+# Setup authorization
 Passbase.configure do |config|
-  config.api_key['X-API-KEY'] = '{{YOUR_SECRET_API_KEY}}'
+  # Configure API key authorization: SecretApiKey
+  config.api_key['SecretApiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['SecretApiKey'] = 'Bearer'
 end
 
 api_instance = Passbase::IdentityApi.new
